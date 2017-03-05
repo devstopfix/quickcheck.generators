@@ -2,6 +2,7 @@
   (:require [quickcheck.generators.auth :as auth]
             [quickcheck.generators.elite :as elite]
             [quickcheck.generators.email :as email]
+            [quickcheck.generators.mac   :as mac]
             [clojure.test :refer :all]
             [clojure.test.check.clojure-test :refer (defspec)]
             [clojure.test.check.generators :as gen]
@@ -28,3 +29,8 @@
                        (is (string? planet))
                        (is (>= (.length planet) 2) planet)
                        (is (not= "RAXXLA" planet))))
+
+(defspec mac-addresses
+         (prop/for-all [mac mac/mac-address]
+                       (is (string? mac))
+                       (is (re-matches #"[a-f0-9]{2}(-[a-f0-9]{2}){5}" mac) mac)))
