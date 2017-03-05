@@ -14,3 +14,8 @@
 (defspec passwords
          (prop/for-all (pwd auth/dictionary-password)
                        (is (string? pwd))))
+
+(defspec bearer-tokens
+         (prop/for-all (token auth/bearer-token)
+                       (is (string? token))
+                       (is (= 32 (.length token)))))
