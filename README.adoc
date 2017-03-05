@@ -4,12 +4,24 @@ A Clojure library of common generators for https://github.com/clojure/test.check
 
 == Usage
 
+Email addresses:
+
 [source,clojure]
 ----
 (require '[clojure.test.check.generators :as gen])
 
 (gen/sample quickcheck.generators.email/email)
 ; ("irrestrainable.cyclotosaurus@villaindom.edu" ...)
+----
+
+https://en.wikipedia.org/wiki/Elite_(video_game)[Elite] http://www.iancgbell.clara.net/elite/text/index.htm[planet names]:
+
+[source,clojure]
+----
+(require '[clojure.test.check.generators :as gen])
+
+(gen/sample quickcheck.generators.elite/planet)
+; ("LAVE" "CEENRAGE" "MAONUS" "XEXEED" "ONEREDAT")
 ----
 
 == License
