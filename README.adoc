@@ -1,0 +1,19 @@
+= quickcheck.generators
+
+A Clojure library of common generators for https://github.com/clojure/test.check[test.check].
+
+== Usage
+
+[source,clojure]
+----
+(require '[clojure.test.check.generators :as gen])
+
+(gen/sample quickcheck.generators.email/email)
+; ("irrestrainable.cyclotosaurus@villaindom.edu" ...)
+----
+
+== License
+
+Copyright © 2017 Devstopfix
+
+Distributed under the Eclipse Public License either version 1.0 or any later version.
